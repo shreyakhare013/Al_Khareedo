@@ -25,7 +25,7 @@ const Success = () => {
             <p className='description'>
                 If you have any questions, please email 
                 <a className='email' href='mailto:order@al-khareedo.com'>
-                    order@al-khareedo.com
+                    order@ai-khareedo.com
                 </a>
             </p>
             <Link href='/'>

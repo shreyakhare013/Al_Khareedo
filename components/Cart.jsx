@@ -14,7 +14,7 @@ const Cart = () => {
   const cartRef = useRef();
   const handlePayment = async () => {
      const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
-     const response = await fetch('/api/stripe',{
+     const response = await fetch( '/api/stripe',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
