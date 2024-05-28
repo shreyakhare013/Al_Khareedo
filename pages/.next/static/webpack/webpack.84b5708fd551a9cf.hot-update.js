@@ -15,6 +15,11 @@ self["webpackHotUpdate_N_E"]("webpack",{},
 /******/ }();
 /******/ 
 /******/ /* webpack/runtime/compat */
+/******/ // Define self if not already defined
+/******/ if (typeof self !== "undefined") {
+/******/     self = typeof self !== "undefined" ? self : global;
+/******/ }
+/******/ 
 /******/ 
 /******/ 
 /******/ // noop fns to prevent runtime errors during initialization
