@@ -9,23 +9,27 @@
  // module.exports = nextConfig
  const nextConfig = {
   reactStrictMode: true,
-   eslint: {
-     ignoreDuringBuilds: true,
-   },
-  webpack: (config, { isServer }) => {
-     // Check if it's the server build, as `self` is not available in Node.js
-     if (!isServer) {
-       // Define `self` as `global` if it's not already defined
-       config.plugins.push(
-         new (require('webpack').DefinePlugin)({
-           'self': 'global'
-         })
-      );
-     }
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  env:{
+    SANITY_API_KEY: process.env.SANITY_API_KEY,
+  }
 
-     return config;
-   },
- };
+}
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        fs: false,
+        module: false,
+        child_process: false,
+        net: false,
+        tls: false,
+      };
+    }
+    return config;
+  },
+//};
 
 module.exports = nextConfig;
 
